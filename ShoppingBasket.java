@@ -42,5 +42,13 @@ class ShoppingBasket {
       return count;
   }
 
+  public boolean returnBogofState(Item itemToFind) {
+    if (getQuantity(itemToFind) >= 2)
+    return itemToFind.bogof();
+  else
+    return false;
+  }
+
+
 }
 

@@ -11,7 +11,7 @@ public class ShoppingBasketTest {
   public void before() {
     shoppingBasket = new ShoppingBasket();
     milk = new Item("milk", 50, false);
-    eggs = new Item("eggs", 120, false);
+    eggs = new Item("eggs", 120, true);
   }
 
   @Test
@@ -50,8 +50,15 @@ public class ShoppingBasketTest {
   public void testGetQuantity() {
     shoppingBasket.addItem(eggs);
     shoppingBasket.addItem(eggs);
-    shoppingBasket.addItem(milk);
     assertEquals( 2, shoppingBasket.getQuantity(eggs) );
+  }
+
+  @Test
+  public void testCanReturnBogofState() {
+    shoppingBasket.addItem(eggs);
+    shoppingBasket.addItem(eggs);
+    shoppingBasket.addItem(milk);
+    assertEquals( true, shoppingBasket.returnBogofState(eggs) );
   }
 
 }
