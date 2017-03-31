@@ -57,8 +57,14 @@ public class ShoppingBasketTest {
   public void testCanReturnBogofState() {
     shoppingBasket.addItem(eggs);
     shoppingBasket.addItem(eggs);
-    shoppingBasket.addItem(milk);
     assertEquals( true, shoppingBasket.returnBogofState(eggs) );
+  }
+
+  @Test
+  public void testCanApplyBogof() {
+    shoppingBasket.addItem(eggs);
+    shoppingBasket.addItem(eggs);
+    assertEquals( 120, shoppingBasket.applyBogof(eggs) );
   }
 
 }

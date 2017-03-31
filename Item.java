@@ -18,7 +18,7 @@ class Item {
     return this.price;
   }
 
-  public boolean bogof() {
+  public boolean getBogof() {
     return this.bogof;
   }
 

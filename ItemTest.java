@@ -20,4 +20,9 @@ public class ItemTest {
     assertEquals( 50, item.getPrice() );
   }
 
+  @Test
+  public void testGetBogof() {
+    assertEquals( false, item.getBogof() );
+  }
+
 }

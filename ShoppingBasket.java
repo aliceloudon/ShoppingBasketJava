@@ -44,9 +44,17 @@ class ShoppingBasket {
 
   public boolean returnBogofState(Item itemToFind) {
     if (getQuantity(itemToFind) >= 2)
-    return itemToFind.bogof();
+    return itemToFind.getBogof();
   else
     return false;
+  }
+
+  public int applyBogof(Item itemToFind) {
+    int value = totalValue() - itemToFind.getPrice();
+      if (getQuantity(itemToFind) >= 2 && itemToFind.getBogof() == true)
+        return value;
+      else
+        return totalValue();
   }
 
 
