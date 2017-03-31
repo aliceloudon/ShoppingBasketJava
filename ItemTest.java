@@ -7,7 +7,7 @@ public class ItemTest {
 
   @Before
   public void before() {
-    item = new Item("bananas", 50);
+    item = new Item("bananas", 50, false);
   }
 
   @Test

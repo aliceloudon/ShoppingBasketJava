@@ -10,8 +10,8 @@ public class ShoppingBasketTest {
   @Before
   public void before() {
     shoppingBasket = new ShoppingBasket();
-    milk = new Item("milk", 50);
-    eggs = new Item("eggs", 120);
+    milk = new Item("milk", 50, false);
+    eggs = new Item("eggs", 120, false);
   }
 
   @Test
@@ -44,6 +44,14 @@ public class ShoppingBasketTest {
   public void testTotalValue() {
     shoppingBasket.addItem(milk);
     assertEquals( 50, shoppingBasket.totalValue() );
+  }
+
+  @Test
+  public void testGetQuantity() {
+    shoppingBasket.addItem(eggs);
+    shoppingBasket.addItem(eggs);
+    shoppingBasket.addItem(milk);
+    assertEquals( 2, shoppingBasket.getQuantity(eggs) );
   }
 
 }

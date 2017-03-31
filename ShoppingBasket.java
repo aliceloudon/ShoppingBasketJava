@@ -2,7 +2,8 @@ import java.util.*;
 
 class ShoppingBasket {
 
-  private ArrayList<Item> items;
+  public ArrayList<Item> items;
+  Item item = new Item("milk", 50, false);
 
   public ShoppingBasket() {
     this.items = new ArrayList<Item>();
@@ -30,6 +31,15 @@ class ShoppingBasket {
         count = count + item.getPrice();
       }
     return count;
+  }
+
+  public int getQuantity(Item itemToFind) {
+    int count = 0;
+      for (Item item : items) {
+        if (itemToFind.getName() == item.getName() )
+          count = count + 1;
+      }
+      return count;
   }
 
 }

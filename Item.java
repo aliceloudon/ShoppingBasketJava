@@ -2,10 +2,12 @@ class Item {
 
   private String name;
   private int price;
+  private boolean bogof;
 
-  public Item(String name, int price) {
+  public Item(String name, int price, boolean bogof) {
     this.name = name;
     this.price = price;
+    this.bogof = bogof;
   }
 
   public String getName() {
@@ -14,6 +16,10 @@ class Item {
 
   public int getPrice() {
     return this.price;
+  }
+
+  public boolean bogof() {
+    return this.bogof;
   }
 
 }
