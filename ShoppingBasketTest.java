@@ -53,18 +53,26 @@ public class ShoppingBasketTest {
     assertEquals( 2, shoppingBasket.getQuantity(eggs) );
   }
 
-  @Test
-  public void testCanReturnBogofState() {
-    shoppingBasket.addItem(eggs);
-    shoppingBasket.addItem(eggs);
-    assertEquals( true, shoppingBasket.returnBogofState(eggs) );
-  }
+  // @Test
+  // public void testCanReturnBogofState() {
+  //   shoppingBasket.addItem(eggs);
+  //   shoppingBasket.addItem(eggs);
+  //   assertEquals( true, shoppingBasket.returnBogofState(eggs) );
+  // }
+
+  // @Test
+  // public void testCanApplyBogof() {
+  //   shoppingBasket.addItem(eggs);
+  //   shoppingBasket.addItem(eggs);
+  //   assertEquals( 120, shoppingBasket.applyBogof(eggs) );
+  // }
 
   @Test
-  public void testCanApplyBogof() {
+  public void testCanApplyBogofAdvanced() {
     shoppingBasket.addItem(eggs);
     shoppingBasket.addItem(eggs);
-    assertEquals( 120, shoppingBasket.applyBogof(eggs) );
+    shoppingBasket.addItem(eggs);
+    assertEquals( 360, shoppingBasket.applyBogof(eggs) );
   }
 
 }

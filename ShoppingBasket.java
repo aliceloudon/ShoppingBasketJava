@@ -42,21 +42,28 @@ class ShoppingBasket {
       return count;
   }
 
-  public boolean returnBogofState(Item itemToFind) {
-    if (getQuantity(itemToFind) >= 2)
-    return itemToFind.getBogof();
-  else
-    return false;
-  }
+  // public boolean returnBogofState(Item itemToFind) {
+  //   if (getQuantity(itemToFind) >= 2)
+  //   return itemToFind.getBogof();
+  // else
+  //   return false;
+  // }
 
+  // public int applyBogof(Item itemToFind) {
+  //   int totalValueReduced = totalValue() - itemToFind.getPrice();
+  //     if (getQuantity(itemToFind) >= 2 && itemToFind.getBogof() == true)
+  //       return totalValueReduced;
+  //     else
+  //       return totalValue();
+  // }
+
+  // If getQuantity(itemToFind) % 2 == 1, apply BOGOF discount.
   public int applyBogof(Item itemToFind) {
-    int value = totalValue() - itemToFind.getPrice();
-      if (getQuantity(itemToFind) >= 2 && itemToFind.getBogof() == true)
-        return value;
-      else
+      if ( (getQuantity(itemToFind) % 2 == 1) && itemToFind.getBogof() == true)
         return totalValue();
+      else
+        return 0;
   }
-
 
 }
 
