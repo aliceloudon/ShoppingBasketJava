@@ -3,33 +3,33 @@ import org.junit.*;
 
 public class CheckoutTest {
 
-  ShoppingBasket basket;
   Checkout checkout;
+  ShoppingBasket shoppingBasket;
   Item milk;
   Item eggs;
-  Item chocolate;
+  Item kettle;
 
   @Before
   public void before() {
-    checkout = new Checkout();
-    basket = new ShoppingBasket();
+    checkout = new Checkout(shoppingBasket);
+    shoppingBasket = new ShoppingBasket();
     milk = new Item("milk", 50, false);
-    eggs = new Item("eggs", 120, false);
-    chocolate = new Item("Green & Blacks", 150, true);
+    eggs = new Item("eggs", 120, true);
+    kettle = new Item("kettle", 2500, false);
   }
 
-  // @Test
-  // public void testCanAddItem(){
-  //   basket.addItem(chocolate);
-  //   assertEquals( 1, basket.countItems() );
-  // }
+// --------------------------------------------------
+// DON'T KNOW WHY THIS DOESN'T WORK
 
   // @Test
-  // public void testBuyOneGetOneFree() {
-  //   basket.addItem(chocolate);
-  //   checkout.buyOneGetOneFree(chocolate);
-  //   assertEquals( 0, basket.countItems() );
+  // public void testCheckoutHasShoppingBasket() {
+  //   assertEquals( shoppingBasket, checkout.getShoppingBasket() );
   // }
+
+  @Test
+  public void testGetTotalValue() {
+    assertEquals( 0, checkout.getTotalValue() );
+  }
 
 }
 

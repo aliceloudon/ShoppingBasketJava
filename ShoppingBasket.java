@@ -2,11 +2,15 @@ import java.util.*;
 
 class ShoppingBasket {
 
-  public ArrayList<Item> items;
-  Item item = new Item("milk", 50, false);
+  ArrayList<Item> items;
+  Item item;
 
   public ShoppingBasket() {
     this.items = new ArrayList<Item>();
+  }
+
+  public ArrayList<Item> getItems() {
+    return this.items;
   }
 
   public int countItems() {
@@ -42,28 +46,32 @@ class ShoppingBasket {
       return count;
   }
 
-  // public boolean returnBogofState(Item itemToFind) {
-  //   if (getQuantity(itemToFind) >= 2)
-  //   return itemToFind.getBogof();
-  // else
-  //   return false;
-  // }
-
-  // public int applyBogof(Item itemToFind) {
-  //   int totalValueReduced = totalValue() - itemToFind.getPrice();
-  //     if (getQuantity(itemToFind) >= 2 && itemToFind.getBogof() == true)
-  //       return totalValueReduced;
-  //     else
-  //       return totalValue();
-  // }
-
-  // If getQuantity(itemToFind) % 2 == 1, apply BOGOF discount.
-  public int applyBogof(Item itemToFind) {
-      if ( (getQuantity(itemToFind) % 2 == 1) && itemToFind.getBogof() == true)
-        return totalValue();
-      else
-        return 0;
+  public boolean returnBogofState(Item itemToFind) {
+    if (getQuantity(itemToFind) >= 2)
+    return itemToFind.getBogof();
+  else
+    return false;
   }
+
+
+// If getQuantity(itemToFind) % 2 == 1, apply BOGOF discount.
+  public int applyBogof(Item itemToFind) {
+    int totalValueReduced = totalValue() - itemToFind.getPrice();
+      if ( (getQuantity(itemToFind) == 2) && itemToFind.getBogof() == true)
+        return totalValueReduced;
+      else if ( (getQuantity(itemToFind) % 2 == 1) && itemToFind.getBogof() == true)
+        return totalValueReduced;
+      else
+        return totalValue();
+  }
+
+// If totalValue() >= 2000, totalValue now equals totalValue * 0.9
+  // public int applyTenPercentDiscount() {
+  //   if (totalValue() >= 2000) {
+  //     int totalValueWithDiscount = (int) totalValue() * 0.9f;
+  //   }
+  //   return totalValueWithDiscount;
+  // }
 
 }
 
