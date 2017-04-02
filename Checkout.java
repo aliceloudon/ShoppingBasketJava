@@ -1,20 +1,20 @@
 import java.util.*;
 
-public class Checkout {
+class Checkout {
 
-  ShoppingBasket shoppingBasket;
+  // ShoppingBasket shoppingBasket;
   int totalValue;
-  ArrayList<Item> items;
+  // ArrayList<Item> items;
 
-  public Checkout (ShoppingBasket shoppingBasket) {
-    this.shoppingBasket = shoppingBasket;
+  public Checkout () {
+    // this.shoppingBasket = shoppingBasket;
     this.totalValue = 0;
-    this.items = this.shoppingBasket.getItems();
+    // this.items = this.shoppingBasket.getItems();
   }
 
-  public ShoppingBasket getShoppingBasket() {
-    return this.shoppingBasket;
-  }
+  // public ShoppingBasket getShoppingBasket() {
+  //   return this.shoppingBasket;
+  // }
  
  public int getTotalValue() {
    return this.totalValue;

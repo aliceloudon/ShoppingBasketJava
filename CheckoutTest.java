@@ -4,18 +4,12 @@ import org.junit.*;
 public class CheckoutTest {
 
   Checkout checkout;
-  ShoppingBasket shoppingBasket;
-  Item milk;
-  Item eggs;
-  Item kettle;
+  // ShoppingBasket shoppingBasket;
 
   @Before
   public void before() {
-    checkout = new Checkout(shoppingBasket);
-    shoppingBasket = new ShoppingBasket();
-    milk = new Item("milk", 50, false);
-    eggs = new Item("eggs", 120, true);
-    kettle = new Item("kettle", 2500, false);
+    checkout = new Checkout();
+    // shoppingBasket = new ShoppingBasket();
   }
 
 // --------------------------------------------------
