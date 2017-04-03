@@ -4,9 +4,12 @@ class ShoppingBasket {
 
   ArrayList<Item> items;
   Item item;
+  ShoppingBasket basket;
 
   public ShoppingBasket() {
     this.items = new ArrayList<Item>();
+    this.basket = basket;
+    this.item = item;
   }
 
   public ArrayList<Item> getItems() {

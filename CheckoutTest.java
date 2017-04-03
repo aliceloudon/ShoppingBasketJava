@@ -4,26 +4,34 @@ import org.junit.*;
 public class CheckoutTest {
 
   Checkout checkout;
-  // ShoppingBasket shoppingBasket;
+  ShoppingBasket basket;
+  Item item;
 
   @Before
   public void before() {
-    checkout = new Checkout();
-    // shoppingBasket = new ShoppingBasket();
+    checkout = new Checkout(basket);
+    basket = new ShoppingBasket();
+    item = new Item("milk", 50, false);
   }
-
-// --------------------------------------------------
-// DON'T KNOW WHY THIS DOESN'T WORK
-
-  // @Test
-  // public void testCheckoutHasShoppingBasket() {
-  //   assertEquals( shoppingBasket, checkout.getShoppingBasket() );
-  // }
 
   @Test
   public void testGetTotalValue() {
     assertEquals( 0, checkout.getTotalValue() );
   }
 
-}
+
+// ---------------------------------------------------
+// checkout.getBasket() is giving me null  
+  // @Test
+  // public void testCheckoutHasBasket() {
+  //   assertEquals( basket, checkout.getBasket() );
+  // }
+
+  // @Test
+  // public void testCanGetItem() {
+  //   assertEquals( item, checkout.getItem() );
+  // }
+
+
+} 
 
